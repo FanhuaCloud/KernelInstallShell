@@ -103,6 +103,8 @@ function Installbasesoftware() {
 function Askuser() {
   KernelName=$(whiptail --inputbox "请输入内核版本" --nocancel 10 100 3>&1 1>&2 2>&3)
   fstr=`echo ${KernelName} | cut -d \. -f 1`
+  Logprefix;echo ${CMSG}'[Info]提示:按下回车键开始，或使用CTRL+C退出'${CEND}
+  read
 }
 
 function MakeKernel() {
